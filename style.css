@@ -1,0 +1,13 @@
+
+.card-header {
+    background-color: lightskyblue;
+    color: white;
+}
+
+.card-body {
+    background-color: whitesmoke;
+}
+
+.card-title {
+    background-color: gainsboro;
+}
