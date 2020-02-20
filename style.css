@@ -11,3 +11,7 @@
 .card-title {
     background-color: gainsboro;
 }
+
+.card-deck {
+    text-align: center;
+}
