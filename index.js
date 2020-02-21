@@ -1,18 +1,19 @@
 const inquirer = require('inquirer');
-const Employee = require('./lib/Employee');
-const Intern = require('./lib/Intern');
-const Engineer = require('./lib/Engineer');
-const Manager = require('./lib/Manager');
+// const Employee = require('./lib/Employee');
+const Intern = require('./lib/intern');
+const Engineer = require('./lib/engineer');
+const Manager = require('./lib/manager');
 
 const team = [];
 
 function app() {
 
-    function getTeam() {
+    // function getTeam() {
+
 
         inquirer.prompt([
             {
-                type: 'list',
+                type: 'checkbox',
                 name: 'jobTitle',
                 message: 'What type of Team Member are we adding?',
                 choices: ['Manager', 'Intern', 'Engineer']
@@ -69,7 +70,7 @@ function app() {
                             name: 'managerOffice',
                             message: 'Office Number:'
                         },
-                        //create the new maanger object then go back to getTeam()
+                        //create the new manger object then go back to getTeam()
                     ]).then()
                     break;
                 //if Intern is selected ask questions to create the intern object
@@ -104,7 +105,7 @@ function app() {
             };
         });
 
-    };
+    // };
 };
 //run the app to build the team
 app();
