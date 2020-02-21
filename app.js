@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-// const Employee = require('./lib/Employee');
-const Intern = require('./lib/intern');
-const Engineer = require('./lib/engineer');
-const Manager = require('./lib/manager');
+// const Employee = require('./lib/employee');
+// const Intern = require('./lib/intern');
+// const Engineer = require('./lib/engineer');
+// const Manager = require('./lib/manager');
 
 const team = [];
 
