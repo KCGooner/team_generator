@@ -13,7 +13,7 @@ function app() {
 
     inquirer.prompt([
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'jobTitle',
             message: 'What type of Team Member are we adding?',
             choices: ['Manager', 'Intern', 'Engineer']
@@ -21,7 +21,6 @@ function app() {
 
     ]).then(userResponse => {
         switch (userResponse.jobTitle) {
-            //if Engineer is selected ask these questions to get info
             case 'Engineer':
                 inquirer.prompt([
                     {
