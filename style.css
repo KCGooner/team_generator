@@ -1,23 +1,23 @@
 
 .card-header {
-    background-color: lightskyblue;
-    color: white;
+    background-color: lightskyblue !important;
 }
 
 .card-body {
-    background-color: whitesmoke;
     text-align: left;
-}
-
-.card-title {
-    text-align: left;
-    color: black;
 }
 
 .card-deck {
     text-align: center;
-    justify-content: space-evenly;
+    place-content: space-evenly;
     margin: 50px;
+    padding: auto;
+}
+
+.card {
+    box-shadow: 5px 5px black;
+    border-radius: 6px;
+    max-width: 18rem;
 }
 
 .header {
@@ -28,4 +28,5 @@
 h1 {
     text-align: center;
     color: white;
+    padding: 70px;
 }
