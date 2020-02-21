@@ -6,12 +6,26 @@
 
 .card-body {
     background-color: whitesmoke;
+    text-align: left;
 }
 
 .card-title {
-    background-color: gainsboro;
+    text-align: left;
+    color: black;
 }
 
 .card-deck {
     text-align: center;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.header {
+    background-color: brown;
+    height: 200px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
 }
