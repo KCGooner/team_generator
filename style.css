@@ -1,6 +1,7 @@
 
 .card-header {
-    background-color: lightskyblue !important;
+    background-color:  #6495ED !important;
+    text-align: left;
 }
 
 .card-body {
@@ -21,7 +22,7 @@
 }
 
 .header {
-    background-color: brown;
+    background-color: #6495ED;
     height: 200px;
 }
 
@@ -29,4 +30,17 @@ h1 {
     text-align: center;
     color: white;
     padding: 70px;
+}
+
+h5 {
+    color: white;
+}
+
+h6 {
+    text-align: center;
+    color: black;
+}
+
+i {
+    padding: 5px;
 }
