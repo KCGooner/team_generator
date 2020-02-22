@@ -1,110 +1,22 @@
-const inquirer = require('inquirer');
-// const Employee = require('./lib/employee');
-// const Intern = require('./lib/intern');
-// const Engineer = require('./lib/engineer');
-// const Manager = require('./lib/manager');
+const inquirer = require("inquirer");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
+const Manager = require("./lib/manager");
+const card = require("./team_generator/lib/main");
 
-const team = [];
+const debug = 1;
 
-function app() {
+ask();
 
-    // function getTeam() {
-
-
-    inquirer.prompt([
-        {
-            type: 'list',
-            name: 'jobTitle',
-            message: 'What type of Team Member are we adding?',
-            choices: ['Manager', 'Intern', 'Engineer']
-        }
-
-    ]).then(userResponse => {
-        switch (userResponse.jobTitle) {
-            case 'Engineer':
-                inquirer.prompt([
-                    {
-                        type: 'input',
-                        name: 'engineerName',
-                        message: 'Engineer Name:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'engineerId',
-                        message: 'Engineer ID:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'engineerTitle',
-                        message: 'Engineers Title:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'engineerGithub',
-                        message: 'Engineers Github:'
-                    },
-                    //create the new engineer item, pass to array then go to getTeam() again
-                ]).then();
-                break;
-            //if Manager is selected ask the questions to create manager object
-            case 'Manager':
-                inquirer.prompt([
-                    {
-                        type: 'input',
-                        name: 'managerName',
-                        message: 'Managers Name:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'managerID',
-                        message: 'Managers ID:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'managerTitle',
-                        message: 'Managers Title:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'managerOffice',
-                        message: 'Office Number:'
-                    },
-                    //create the new manger object then go back to getTeam()
-                ]).then()
-                break;
-            //if Intern is selected ask questions to create the intern object
-            case 'Intern':
-                inquirer.prompt([
-                    {
-                        type: 'input',
-                        name: 'internName',
-                        message: 'Intern Name:',
-                    },
-                    {
-                        type: 'input',
-                        name: 'internID',
-                        message: 'Intern ID:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'internTitle',
-                        message: 'Intern Title:'
-                    },
-                    {
-                        type: 'input',
-                        name: 'internSchool',
-                        message: 'Interns School:'
-                    },
-                    //create new intern object, add to array then go to getTeam()
-                ]).then()
-                break;
-            //if nothing is selected go back to question
-            default:
-                getTeam();
-        };
-    });
-
-    // };
-};
-//run the app to build the team
-app();
+async function ask() {
+    let addPeople = "y";
+    let people = [];
+    do {
+        const response = await promptUser();
+        people.push(response);
+        addPeople = response.end;
+        debug && console.log(response);
+    } while (addPeople === "y");
+    debug && console.log(people);
+    buildHtml(people);
+}
