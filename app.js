@@ -24,15 +24,15 @@ function buildHtml(people) {
         switch (person.position) {
             case 'Manager':
                 const manager = new Manager(person.name, person.id, person.email, person.officeNumber);
-                html = card.manager(manager);
+                // html = card.manager(manager);
                 break;
             case 'Engineer':
                 const engineer = new Engineer(person.name, person.id, person.email, person.github);
-                html = card.engineer(engineer);
+                // html = card.engineer(engineer);
                 break;
             case 'Intern':
                 const intern = new Intern(person.name, person.id, person.email, person.school);
-                html = card.intern(intern);
+                // html = card.intern(intern);
                 break;
         }
 
