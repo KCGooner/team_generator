@@ -14,7 +14,30 @@ async function ask() {
         people.push(response);
         addPeople = response.end;
     } while (addPeople === "y");
+    console.log("Building HTML file of team.")
     buildHtml(people);
+}
+
+function buildHtml(people) {
+    for (i = 0; i < people.length; i++) {
+        let person = people[i];
+        switch (person.position) {
+            case 'Manager':
+                const manager = new Manager(person.name, person.id, person.email, person.officeNumber);
+                html = card.manager(manager);
+                break;
+            case 'Engineer':
+                const engineer = new Engineer(person.name, person.id, person.email, person.github);
+                html = card.engineer(engineer);
+                break;
+            case 'Intern':
+                const intern = new Intern(person.name, person.id, person.email, person.school);
+                html = card.intern(intern);
+                break;
+        }
+
+    }
+
 }
 
 function promptUser() {
